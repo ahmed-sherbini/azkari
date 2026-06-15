@@ -60,7 +60,7 @@
       el("div", { class: "hero-pattern" }),
       el("span", { class: "hero-greeting", html: '<svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5h-2v6l5 3 1-1.7-4-2.3z"/></svg>' }),
       el("h2", { text: "أذكاري" }),
-      el("p", { text: "رفيقك اليومي للأذكار والقرآن والتسبيح — يعمل بدون إنترنت." })
+      el("p", { text: "رفيقك اليومي للأذكار والقرآن والتسبيح." })
     ]);
     hero.querySelector(".hero-greeting").appendChild(document.createTextNode(" " + greeting()));
 

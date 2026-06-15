@@ -57,7 +57,7 @@
       ]);
     } else if (hasPrompt) {
       body = el("div", { class: "ins-steps" }, [
-        el("p", { text: "ثبّت أذكاري كتطبيق مستقل يعمل بدون إنترنت، مع أيقونة على شاشتك." })
+        el("p", { text: "ثبّت أذكاري كتطبيق مستقل مع أيقونة على شاشتك." })
       ]);
     } else {
       body = el("div", { class: "ins-steps" }, [
