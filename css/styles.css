@@ -491,7 +491,14 @@ img { max-width: 100%; display: block; }
   font-size: .85rem; font-weight: 700; color: var(--text-soft);
   white-space: nowrap; font-variant-numeric: tabular-nums;
 }
-.page-nav button[disabled] { opacity: .4; pointer-events: none; }
+.pg-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, var(--c-primary), var(--c-primary-600)) !important;
+  color: #fff !important; padding: 10px 16px !important; font-size: .9rem !important;
+  box-shadow: 0 4px 12px rgba(15,118,110,.28);
+}
+.pg-btn svg { display: block; flex-shrink: 0; }
+.page-nav button[disabled] { opacity: .35; pointer-events: none; box-shadow: none; }
 @media (min-width: 900px) { .page-nav { bottom: 16px; } }
 
 .reader-missing {

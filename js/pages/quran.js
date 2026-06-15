@@ -163,8 +163,13 @@
     var pageFirstSurah = num; // surah used by the bookmark button (first on page)
 
     var pageInd = el("span", { class: "page-indicator" });
-    var prevBtn = el("button", { text: "الصفحة السابقة ›" });
-    var nextBtn = el("button", { text: "‹ الصفحة التالية" });
+    // RTL page nav: "previous" points right →, "next" points left ←.
+    var chevR = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>';
+    var chevL = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></svg>';
+    var prevBtn = el("button", { class: "pg-btn", "aria-label": "الصفحة السابقة" });
+    prevBtn.innerHTML = "<span>السابقة</span>" + chevR;
+    var nextBtn = el("button", { class: "pg-btn", "aria-label": "الصفحة التالية" });
+    nextBtn.innerHTML = chevL + "<span>التالية</span>";
 
     // Starting page: resume if returning to this surah, else the surah's first page.
     var current = idx.surahStart[num] || 1;
