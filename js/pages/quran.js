@@ -21,7 +21,7 @@
         var p = a.page;
         if (!p) return;
         (byPage[p] = byPage[p] || []).push({
-          surah: num, n: a.n, text: a.text, bismillah: s.bismillah, isStart: idx === 0
+          surah: num, n: a.n, text: a.text, bismillah: s.bismillah, isStart: idx === 0, juz: a.juz
         });
       });
     }
@@ -219,10 +219,20 @@
       });
       body.appendChild(frag);
 
-      // Header reflects the first surah on this page + the real page number.
+      // Distinct juz' present on this page (a page may straddle two juz').
+      var juzList = [];
+      entries.forEach(function (e) { if (e.juz && juzList.indexOf(e.juz) === -1) juzList.push(e.juz); });
+      juzList.sort(function (a, b) { return a - b; });
+      var juzText = juzList.length
+        ? "الجزء " + (juzList.length > 1
+            ? UI.toArabicNum(juzList[0]) + "–" + UI.toArabicNum(juzList[juzList.length - 1])
+            : UI.toArabicNum(juzList[0]))
+        : "";
+
+      // Header reflects the first surah on this page + the real page number + juz'.
       var fm = (window.QuranMeta || [])[pageFirstSurah - 1];
       headerTitle.textContent = fm ? fm.nameFull : meta.nameFull;
-      headerMeta.textContent = "صفحة " + UI.toArabicNum(current) + " من ٦٠٤";
+      headerMeta.textContent = "صفحة " + UI.toArabicNum(current) + " من ٦٠٤" + (juzText ? " · " + juzText : "");
 
       pageInd.textContent = "صفحة " + UI.toArabicNum(current) + " / ٦٠٤";
       prevBtn.disabled = current <= idx.min;
