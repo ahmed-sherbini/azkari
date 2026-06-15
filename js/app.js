@@ -14,6 +14,9 @@
   /* ---------------- Theme ---------------- */
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
+    // Keep the WebView's native color-scheme in sync so Android doesn't
+    // force-dark the light theme (and form controls match the theme).
+    document.documentElement.style.colorScheme = theme === "dark" ? "dark" : "light";
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute("content", theme === "dark" ? "#0b1513" : "#0f766e");
   }

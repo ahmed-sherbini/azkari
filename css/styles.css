@@ -5,6 +5,7 @@
 
 /* ---------- Design tokens ---------- */
 :root {
+  color-scheme: light; /* page owns its theme — disables WebView force-dark */
   /* Brand palette — soft teal/emerald + warm gold */
   --c-primary: #0f766e;
   --c-primary-600: #0d6b63;
@@ -48,6 +49,7 @@
 }
 
 [data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0b1513;
   --bg-grad-1: #0e1c19;
   --bg-grad-2: #121a17;
@@ -76,6 +78,8 @@
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 
+html { background: var(--bg); } /* prevents Capacitor's teal backdrop showing on overscroll */
+
 body {
   font-family: var(--font);
   color: var(--text);
@@ -86,6 +90,7 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   line-height: 1.9;
+  overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   transition: background-color .4s var(--ease), color .3s var(--ease);
 }
@@ -104,6 +109,11 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(18px) saturate(140%);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
+}
+/* If the WebView can't render the blur, fall back to an opaque surface so the
+   glass elements don't look washed-out/translucent (notably on Android). */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: var(--surface); }
 }
 
 /* ---------- App layout ---------- */
