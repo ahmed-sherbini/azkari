@@ -353,6 +353,13 @@ img { max-width: 100%; display: block; }
   font-size: var(--adhkar-font-size); line-height: 2.4; white-space: pre-line;
   font-weight: 500; margin-bottom: 14px;
 }
+.dhikr-fadl {
+  font-size: .82rem; color: var(--text-soft); line-height: 1.9;
+  background: var(--surface-2); border-radius: var(--radius-sm);
+  padding: 8px 12px; margin-bottom: 10px;
+  border-inline-start: 3px solid var(--c-accent);
+}
+.dhikr-fadl .fadl-label { font-weight: 800; color: var(--c-accent); }
 .dhikr-source { font-size: .78rem; color: var(--text-muted); margin-bottom: 12px; }
 .dhikr-footer { display: flex; align-items: center; gap: 12px; }
 .counter-btn {

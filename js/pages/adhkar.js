@@ -70,11 +70,15 @@
       ]);
       var card = el("div", { class: "dhikr-card" }, [
         el("div", { class: "dhikr-head" }, [
-          el("span", { class: "dhikr-title", text: d.title }),
+          el("span", { class: "dhikr-title", text: d.title || ("الذكر " + UI.toArabicNum(d.id)) }),
           el("span", { class: "dhikr-badge", text: "×" + UI.toArabicNum(d.count) })
         ]),
         el("div", { class: "dhikr-text", text: d.text }),
-        el("div", { class: "dhikr-source", text: "المصدر: " + d.source }),
+        d.fadl ? el("div", { class: "dhikr-fadl" }, [
+          el("span", { class: "fadl-label", text: "الفضل: " }),
+          document.createTextNode(d.fadl)
+        ]) : null,
+        d.source ? el("div", { class: "dhikr-source", text: "المصدر: " + d.source }) : null,
         el("div", { class: "dhikr-footer" }, [btn]),
         el("div", { class: "dhikr-bar" }, [bar])
       ]);
