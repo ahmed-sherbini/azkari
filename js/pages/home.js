@@ -27,6 +27,19 @@
       return new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura", { day: "numeric", month: "long", year: "numeric" }).format(d);
     } catch (e) { return ""; }
   }
+  // Convert a 24h "HH:MM" prayer time to 12h with ص/م (e.g. "18:45" → "6:45 م").
+  function fmtClock12(hm) {
+    if (!hm || hm.indexOf(":") === -1) return hm || "—";
+    var p = hm.split(":");
+    var d = new Date();
+    d.setHours(+p[0], +p[1], 0, 0);
+    try {
+      return new Intl.DateTimeFormat("ar-EG", { hour: "numeric", minute: "2-digit", hour12: true }).format(d);
+    } catch (e) {
+      var h = +p[0], m = p[1], ap = h < 12 ? "ص" : "م", h12 = h % 12 || 12;
+      return h12 + ":" + m + " " + ap;
+    }
+  }
 
   var CARDS = [
     { route: "#/morning", cls: "qc-morning", title: "أذكار الصباح", sub: "ابدأ يومك بذكر الله",
@@ -119,7 +132,7 @@
       var grid = el("div", { class: "prayer-grid" }, Prayer.ORDER.map(function (o) {
         return el("div", { class: "prayer-row" + (o.prayer ? "" : " minor"), "data-key": o.key }, [
           el("span", { class: "p-name", text: o.label }),
-          el("span", { class: "p-time", text: UI.toArabicNum(data.timings[o.key] || "—") })
+          el("span", { class: "p-time", text: UI.toArabicNum(fmtClock12(data.timings[o.key])) })
         ]);
       }));
 
