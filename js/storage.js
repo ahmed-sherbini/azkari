@@ -113,8 +113,8 @@
       persist();
       return i === -1; // true if now bookmarked
     },
-    setLastRead: function (surah, scroll) {
-      state.quran.lastRead = { surah: surah, scroll: scroll || 0 };
+    setLastRead: function (surah, scroll, page) {
+      state.quran.lastRead = { surah: surah, scroll: scroll || 0, page: page || 0 };
       persist();
     },
     lastRead: function () { return state.quran.lastRead; },

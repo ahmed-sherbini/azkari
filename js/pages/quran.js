@@ -6,6 +6,30 @@
   "use strict";
   var el = UI.el;
 
+  // Global index of the real Madani mushaf: page (1..604) → ordered ayahs,
+  // built once from the page numbers stored per ayah in quran-data.js.
+  var mushaf = null;
+  function buildMushaf() {
+    if (mushaf) return mushaf;
+    var T = window.QuranText || {};
+    var byPage = {}, surahStart = {};
+    for (var num = 1; num <= 114; num++) {
+      var s = T[num];
+      if (!s || !s.ayahs || !s.ayahs.length) continue;
+      surahStart[num] = s.ayahs[0].page || null;
+      s.ayahs.forEach(function (a, idx) {
+        var p = a.page;
+        if (!p) return;
+        (byPage[p] = byPage[p] || []).push({
+          surah: num, n: a.n, text: a.text, bismillah: s.bismillah, isStart: idx === 0
+        });
+      });
+    }
+    var nums = Object.keys(byPage).map(Number).sort(function (a, b) { return a - b; });
+    mushaf = { byPage: byPage, surahStart: surahStart, min: nums[0] || 1, max: nums[nums.length - 1] || 1 };
+    return mushaf;
+  }
+
   /* ---------------- Surah index ---------------- */
   function renderList() {
     var view = document.getElementById("view");
@@ -112,7 +136,8 @@
     });
     bmBtn.appendChild(document.createTextNode(" حفظ"));
     bmBtn.addEventListener("click", function () {
-      var on = Store.toggleBookmark(num);
+      // Bookmark the surah that starts the current page.
+      var on = Store.toggleBookmark(pageFirstSurah);
       bmBtn.classList.toggle("on", on);
       UI.vibrate(12);
       UI.toast(on ? "تمت إضافة العلامة" : "تم حذف العلامة");
@@ -126,44 +151,87 @@
       bmBtn
     ]);
 
-    var header = el("div", { class: "surah-header" }, [
-      el("div", { class: "title", text: meta.nameFull }),
-      el("div", { class: "meta", text: meta.type + " · " + UI.toArabicNum(meta.ayahCount) + " آيات · ترتيب " + UI.toArabicNum(meta.number) })
-    ]);
+    var headerTitle = el("div", { class: "title", text: meta.nameFull });
+    var headerMeta = el("div", { class: "meta" });
+    var header = el("div", { class: "surah-header" }, [headerTitle, headerMeta]);
 
     var body = el("div", { class: "reader-body" });
 
-    if (text && text.ayahs && text.ayahs.length) {
-      if (text.bismillah) {
-        body.appendChild(el("div", { class: "basmalah", text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" }));
+    // ---- Real mushaf pagination ----
+    var idx = buildMushaf();
+    var hasPages = !!idx.surahStart[num];
+    var pageFirstSurah = num; // surah used by the bookmark button (first on page)
+
+    var pageInd = el("span", { class: "page-indicator" });
+    var prevBtn = el("button", { text: "الصفحة السابقة ›" });
+    var nextBtn = el("button", { text: "‹ الصفحة التالية" });
+
+    // Starting page: resume if returning to this surah, else the surah's first page.
+    var current = idx.surahStart[num] || 1;
+    var lr = Store.lastRead();
+    if (lr && lr.surah === num && lr.page && idx.byPage[lr.page]) current = lr.page;
+
+    function syncBookmarkBtn() {
+      var on = Store.isBookmarked(pageFirstSurah);
+      bmBtn.classList.toggle("on", on);
+    }
+
+    function renderPage() {
+      body.innerHTML = "";
+      if (!hasPages) {
+        body.appendChild(el("div", { class: "reader-missing" }, [
+          el("div", { html: '<svg viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M3 5a2 2 0 012-2h5v16H5a2 2 0 00-2 2zm11-2h5a2 2 0 012 2v16a2 2 0 00-2-2h-5z"/></svg>' }),
+          el("p", { text: "نص هذه السورة غير متوفر." })
+        ]));
+        pageInd.textContent = "—";
+        prevBtn.disabled = nextBtn.disabled = true;
+        return;
       }
+      var entries = idx.byPage[current] || [];
+      pageFirstSurah = entries.length ? entries[0].surah : num;
+
       var frag = document.createDocumentFragment();
-      text.ayahs.forEach(function (a) {
+      var lastSurah = null;
+      entries.forEach(function (e) {
+        if (e.surah !== lastSurah) {
+          // A new surah begins on this page → decorative name band (+ basmalah).
+          var m = (window.QuranMeta || [])[e.surah - 1];
+          frag.appendChild(el("div", { class: "surah-band" }, [
+            el("span", { text: m ? m.nameFull : "سورة " + e.surah })
+          ]));
+          if (e.bismillah && e.isStart) {
+            frag.appendChild(el("div", { class: "basmalah", text: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ" }));
+          }
+          lastSurah = e.surah;
+        }
         var span = el("span", { class: "ayah" }, [
-          document.createTextNode(a.text + " "),
-          // U+06DD (end-of-ayah) followed by the number → Amiri renders the
-          // number enclosed in the rosette ornament.
-          el("span", { class: "ayah-mark", text: "۝" + UI.toArabicNum(a.n) })
+          document.createTextNode(e.text + " "),
+          // U+06DD (end-of-ayah) + number → Amiri renders it inside the rosette.
+          el("span", { class: "ayah-mark", text: "۝" + UI.toArabicNum(e.n) })
         ]);
         frag.appendChild(span);
         frag.appendChild(document.createTextNode(" "));
       });
       body.appendChild(frag);
-    } else {
-      // Graceful note when full text hasn't been populated yet.
-      body.appendChild(el("div", { class: "reader-missing" }, [
-        el("div", { html: '<svg viewBox="0 0 24 24" width="44" height="44"><path fill="currentColor" d="M3 5a2 2 0 012-2h5v16H5a2 2 0 00-2 2zm11-2h5a2 2 0 012 2v16a2 2 0 00-2-2h-5z"/></svg>' }),
-        el("p", { text: "نص هذه السورة غير مُضمَّن في النسخة التجريبية." }),
-        el("p", { text: "أضِف مجموعة بيانات القرآن الكاملة لعرض جميع السور.", style: "font-size:.82rem;margin-top:6px" }),
-        el("code", { text: "data/quran-data.js → window.QuranText[" + num + "]" })
-      ]));
+
+      // Header reflects the first surah on this page + the real page number.
+      var fm = (window.QuranMeta || [])[pageFirstSurah - 1];
+      headerTitle.textContent = fm ? fm.nameFull : meta.nameFull;
+      headerMeta.textContent = "صفحة " + UI.toArabicNum(current) + " من ٦٠٤";
+
+      pageInd.textContent = "صفحة " + UI.toArabicNum(current) + " / ٦٠٤";
+      prevBtn.disabled = current <= idx.min;
+      nextBtn.disabled = current >= idx.max;
+      syncBookmarkBtn();
+      Store.setLastRead(pageFirstSurah, 0, current);
+      window.scrollTo(0, 0);
     }
 
-    // Prev / next navigation
-    var navRow = el("div", { class: "reader-toolbar glass", style: "margin-top:16px" }, [
-      el("button", { text: "› السابقة", disabled: num <= 1, onclick: function () { if (num > 1) location.hash = "#/quran/" + (num - 1); } }),
-      el("span", { class: "grow" }),
-      el("button", { text: "التالية ‹", disabled: num >= 114, onclick: function () { if (num < 114) location.hash = "#/quran/" + (num + 1); } })
+    prevBtn.addEventListener("click", function () { if (current > idx.min) { current--; renderPage(); } });
+    nextBtn.addEventListener("click", function () { if (current < idx.max) { current++; renderPage(); } });
+
+    var navRow = el("div", { class: "reader-toolbar glass page-nav", style: "margin-top:16px" }, [
+      prevBtn, el("span", { class: "grow" }), pageInd, el("span", { class: "grow" }), nextBtn
     ]);
 
     applySize();
@@ -171,17 +239,7 @@
     view.appendChild(header);
     view.appendChild(body);
     view.appendChild(navRow);
-
-    // Persist last-read + restore scroll.
-    Store.setLastRead(num, 0);
-    var last = Store.lastRead();
-    if (last && last.surah === num && last.scroll) {
-      requestAnimationFrame(function () { window.scrollTo(0, last.scroll); });
-    }
-    var scrollHandler = function () { Store.setLastRead(num, window.scrollY); };
-    window.addEventListener("scroll", scrollHandler, { passive: true });
-    // Clean up when navigating away.
-    window.Pages._cleanup = function () { window.removeEventListener("scroll", scrollHandler); };
+    renderPage();
   }
 
   window.Pages = window.Pages || {};

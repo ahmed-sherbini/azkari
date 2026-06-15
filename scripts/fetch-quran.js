@@ -94,7 +94,11 @@ function toSurahFile(s) {
   const number = s.number;
   const ayahs = s.ayahs.map((a) => ({
     n: a.numberInSurah != null ? a.numberInSurah : a.number,
-    text: String(a.text).trim()
+    text: String(a.text).trim(),
+    // Physical Madani-mushaf page (1..604) — used by the reader to paginate by
+    // the real Quran page layout. Also keep the juz' for context.
+    page: a.page,
+    juz: a.juz
   }));
   // Al-Fatihah counts the basmalah as ayah 1; At-Tawbah (9) has none.
   // Every other surah is shown with a separate basmalah line in the reader.
