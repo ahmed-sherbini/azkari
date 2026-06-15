@@ -445,7 +445,26 @@ img { max-width: 100%; display: block; }
 }
 .reader-toolbar button:active { transform: scale(.93); }
 .reader-toolbar button.on { background: var(--c-primary); color: #fff; }
-.font-size-label { font-size: .8rem; color: var(--text-muted); min-width: 42px; text-align: center; }
+/* Modern, generic font-size stepper (small-A / large-A) */
+.font-stepper {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--surface-2); border-radius: var(--radius-pill); padding: 4px;
+}
+.font-stepper .fs-btn {
+  width: 36px; height: 36px; padding: 0; border-radius: var(--radius-pill);
+  display: inline-grid; place-items: center; color: var(--c-primary);
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  transition: transform .12s var(--ease), background .2s, color .2s;
+}
+.font-stepper .fs-btn:hover { color: #fff; background: var(--c-primary); }
+.font-stepper .fs-btn:active { transform: scale(.88); }
+.font-stepper .fs-a { font-weight: 800; line-height: 1; font-family: var(--font); }
+.font-stepper .fs-a.sm { font-size: .78rem; }
+.font-stepper .fs-a.lg { font-size: 1.25rem; }
+.fs-size {
+  min-width: 46px; text-align: center; font-size: .78rem; font-weight: 700;
+  color: var(--text-muted); font-variant-numeric: tabular-nums;
+}
 
 .surah-header {
   text-align: center; padding: 22px; border-radius: var(--radius-lg);

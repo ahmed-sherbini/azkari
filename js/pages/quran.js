@@ -118,7 +118,7 @@
     var text = (window.QuranText || {})[num];
 
     // Toolbar: font size + bookmark
-    var sizeLabel = el("span", { class: "font-size-label" });
+    var sizeLabel = el("span", { class: "fs-size" });
     function applySize() {
       var px = Store.prefs().readerFontSize;
       document.documentElement.style.setProperty("--reader-font-size", px + "px");
@@ -143,10 +143,13 @@
       UI.toast(on ? "تمت إضافة العلامة" : "تم حذف العلامة");
     });
 
-    var toolbar = el("div", { class: "reader-toolbar glass" }, [
-      el("button", { text: "أ−", "aria-label": "تصغير الخط", onclick: function () { bump(-2); } }),
+    var fontStepper = el("div", { class: "font-stepper" }, [
+      el("button", { class: "fs-btn", "aria-label": "تصغير الخط", title: "تصغير الخط", html: '<span class="fs-a sm">A</span>', onclick: function () { bump(-2); } }),
       sizeLabel,
-      el("button", { text: "أ+", "aria-label": "تكبير الخط", onclick: function () { bump(2); } }),
+      el("button", { class: "fs-btn", "aria-label": "تكبير الخط", title: "تكبير الخط", html: '<span class="fs-a lg">A</span>', onclick: function () { bump(2); } })
+    ]);
+    var toolbar = el("div", { class: "reader-toolbar glass" }, [
+      fontStepper,
       el("span", { class: "grow" }),
       bmBtn
     ]);

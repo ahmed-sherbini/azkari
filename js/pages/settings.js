@@ -20,18 +20,18 @@
     });
 
     function fontSeg(prefKey, cssVar, min, max, step) {
-      var label = el("span", { class: "font-size-label", text: prefs[prefKey] + "px" });
+      var label = el("span", { class: "fs-size", text: prefs[prefKey] + "px" });
       function setPx(px) {
         px = Math.min(max, Math.max(min, px));
         Store.setPref(prefKey, px);
         label.textContent = px + "px";
         if (cssVar) document.documentElement.style.setProperty(cssVar, px + "px");
       }
-      var seg = el("div", { class: "seg" }, [
-        el("button", { text: "أ−", onclick: function () { setPx(Store.prefs()[prefKey] - step); } }),
-        el("button", { text: "أ+", onclick: function () { setPx(Store.prefs()[prefKey] + step); } })
+      return el("div", { class: "font-stepper" }, [
+        el("button", { class: "fs-btn", "aria-label": "تصغير الخط", title: "تصغير الخط", html: '<span class="fs-a sm">A</span>', onclick: function () { setPx(Store.prefs()[prefKey] - step); } }),
+        label,
+        el("button", { class: "fs-btn", "aria-label": "تكبير الخط", title: "تكبير الخط", html: '<span class="fs-a lg">A</span>', onclick: function () { setPx(Store.prefs()[prefKey] + step); } })
       ]);
-      return el("div", { style: "display:flex;align-items:center;gap:10px" }, [label, seg]);
     }
 
     var appearance = el("div", { class: "settings-group" }, [
