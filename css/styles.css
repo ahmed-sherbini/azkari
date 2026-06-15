@@ -458,9 +458,7 @@ img { max-width: 100%; display: block; }
 }
 .font-stepper .fs-btn:hover { color: #fff; background: var(--c-primary); }
 .font-stepper .fs-btn:active { transform: scale(.88); }
-.font-stepper .fs-a { font-weight: 800; line-height: 1; font-family: var(--font); }
-.font-stepper .fs-a.sm { font-size: .78rem; }
-.font-stepper .fs-a.lg { font-size: 1.25rem; }
+.font-stepper .fs-btn svg { display: block; }
 .fs-size {
   min-width: 46px; text-align: center; font-size: .78rem; font-weight: 700;
   color: var(--text-muted); font-variant-numeric: tabular-nums;

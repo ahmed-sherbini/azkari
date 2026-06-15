@@ -144,9 +144,9 @@
     });
 
     var fontStepper = el("div", { class: "font-stepper" }, [
-      el("button", { class: "fs-btn", "aria-label": "تصغير الخط", title: "تصغير الخط", html: '<span class="fs-a sm">A</span>', onclick: function () { bump(-2); } }),
+      el("button", { class: "fs-btn", "aria-label": "تصغير الخط", title: "تصغير الخط", html: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M6 12h12"/></svg>', onclick: function () { bump(-2); } }),
       sizeLabel,
-      el("button", { class: "fs-btn", "aria-label": "تكبير الخط", title: "تكبير الخط", html: '<span class="fs-a lg">A</span>', onclick: function () { bump(2); } })
+      el("button", { class: "fs-btn", "aria-label": "تكبير الخط", title: "تكبير الخط", html: '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M12 6v12M6 12h12"/></svg>', onclick: function () { bump(2); } })
     ]);
     var toolbar = el("div", { class: "reader-toolbar glass" }, [
       fontStepper,
