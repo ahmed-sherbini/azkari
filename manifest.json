@@ -1,0 +1,25 @@
+{
+  "name": "أذكاري — أذكار وقرآن وسبحة",
+  "short_name": "أذكاري",
+  "description": "تطبيق إسلامي حديث لأذكار الصباح والمساء، القرآن الكريم، والسبحة الإلكترونية. يعمل بدون إنترنت.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f766e",
+  "theme_color": "#0f766e",
+  "categories": ["lifestyle", "education", "books"],
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "أذكار الصباح", "short_name": "الصباح", "url": "./index.html#/morning" },
+    { "name": "أذكار المساء", "short_name": "المساء", "url": "./index.html#/evening" },
+    { "name": "السبحة", "short_name": "السبحة", "url": "./index.html#/tasbeeh" }
+  ]
+}

@@ -1,0 +1,800 @@
+[
+  {
+    "number": 1,
+    "name": "ٱلْفَاتِحَةِ",
+    "type": "مكية",
+    "ayahCount": 7,
+    "file": "quran/001.json"
+  },
+  {
+    "number": 2,
+    "name": "البَقَرَةِ",
+    "type": "مدنية",
+    "ayahCount": 286,
+    "file": "quran/002.json"
+  },
+  {
+    "number": 3,
+    "name": "آلِ عِمۡرَانَ",
+    "type": "مدنية",
+    "ayahCount": 200,
+    "file": "quran/003.json"
+  },
+  {
+    "number": 4,
+    "name": "النِّسَاءِ",
+    "type": "مدنية",
+    "ayahCount": 176,
+    "file": "quran/004.json"
+  },
+  {
+    "number": 5,
+    "name": "المَائـِدَةِ",
+    "type": "مدنية",
+    "ayahCount": 120,
+    "file": "quran/005.json"
+  },
+  {
+    "number": 6,
+    "name": "الأَنۡعَامِ",
+    "type": "مكية",
+    "ayahCount": 165,
+    "file": "quran/006.json"
+  },
+  {
+    "number": 7,
+    "name": "الأَعۡرَافِ",
+    "type": "مكية",
+    "ayahCount": 206,
+    "file": "quran/007.json"
+  },
+  {
+    "number": 8,
+    "name": "الأَنفَالِ",
+    "type": "مدنية",
+    "ayahCount": 75,
+    "file": "quran/008.json"
+  },
+  {
+    "number": 9,
+    "name": "التَّوۡبَةِ",
+    "type": "مدنية",
+    "ayahCount": 129,
+    "file": "quran/009.json"
+  },
+  {
+    "number": 10,
+    "name": "يُونُسَ",
+    "type": "مكية",
+    "ayahCount": 109,
+    "file": "quran/010.json"
+  },
+  {
+    "number": 11,
+    "name": "هُودٍ",
+    "type": "مكية",
+    "ayahCount": 123,
+    "file": "quran/011.json"
+  },
+  {
+    "number": 12,
+    "name": "يُوسُفَ",
+    "type": "مكية",
+    "ayahCount": 111,
+    "file": "quran/012.json"
+  },
+  {
+    "number": 13,
+    "name": "الرَّعۡدِ",
+    "type": "مدنية",
+    "ayahCount": 43,
+    "file": "quran/013.json"
+  },
+  {
+    "number": 14,
+    "name": "إِبۡرَاهِيمَ",
+    "type": "مكية",
+    "ayahCount": 52,
+    "file": "quran/014.json"
+  },
+  {
+    "number": 15,
+    "name": "الحِجۡرِ",
+    "type": "مكية",
+    "ayahCount": 99,
+    "file": "quran/015.json"
+  },
+  {
+    "number": 16,
+    "name": "النَّحۡلِ",
+    "type": "مكية",
+    "ayahCount": 128,
+    "file": "quran/016.json"
+  },
+  {
+    "number": 17,
+    "name": "الإِسۡرَاءِ",
+    "type": "مكية",
+    "ayahCount": 111,
+    "file": "quran/017.json"
+  },
+  {
+    "number": 18,
+    "name": "الكَهۡفِ",
+    "type": "مكية",
+    "ayahCount": 110,
+    "file": "quran/018.json"
+  },
+  {
+    "number": 19,
+    "name": "مَرۡيَمَ",
+    "type": "مكية",
+    "ayahCount": 98,
+    "file": "quran/019.json"
+  },
+  {
+    "number": 20,
+    "name": "طه",
+    "type": "مكية",
+    "ayahCount": 135,
+    "file": "quran/020.json"
+  },
+  {
+    "number": 21,
+    "name": "الأَنبِيَاءِ",
+    "type": "مكية",
+    "ayahCount": 112,
+    "file": "quran/021.json"
+  },
+  {
+    "number": 22,
+    "name": "الحَجِّ",
+    "type": "مدنية",
+    "ayahCount": 78,
+    "file": "quran/022.json"
+  },
+  {
+    "number": 23,
+    "name": "المُؤۡمِنُونَ",
+    "type": "مكية",
+    "ayahCount": 118,
+    "file": "quran/023.json"
+  },
+  {
+    "number": 24,
+    "name": "النُّورِ",
+    "type": "مدنية",
+    "ayahCount": 64,
+    "file": "quran/024.json"
+  },
+  {
+    "number": 25,
+    "name": "الفُرۡقَانِ",
+    "type": "مكية",
+    "ayahCount": 77,
+    "file": "quran/025.json"
+  },
+  {
+    "number": 26,
+    "name": "الشُّعَرَاءِ",
+    "type": "مكية",
+    "ayahCount": 227,
+    "file": "quran/026.json"
+  },
+  {
+    "number": 27,
+    "name": "النَّمۡلِ",
+    "type": "مكية",
+    "ayahCount": 93,
+    "file": "quran/027.json"
+  },
+  {
+    "number": 28,
+    "name": "القَصَصِ",
+    "type": "مكية",
+    "ayahCount": 88,
+    "file": "quran/028.json"
+  },
+  {
+    "number": 29,
+    "name": "العَنكَبُوتِ",
+    "type": "مكية",
+    "ayahCount": 69,
+    "file": "quran/029.json"
+  },
+  {
+    "number": 30,
+    "name": "الرُّومِ",
+    "type": "مكية",
+    "ayahCount": 60,
+    "file": "quran/030.json"
+  },
+  {
+    "number": 31,
+    "name": "لُقۡمَانَ",
+    "type": "مكية",
+    "ayahCount": 34,
+    "file": "quran/031.json"
+  },
+  {
+    "number": 32,
+    "name": "السَّجۡدَةِ",
+    "type": "مكية",
+    "ayahCount": 30,
+    "file": "quran/032.json"
+  },
+  {
+    "number": 33,
+    "name": "الأَحۡزَابِ",
+    "type": "مدنية",
+    "ayahCount": 73,
+    "file": "quran/033.json"
+  },
+  {
+    "number": 34,
+    "name": "سَبَإٍ",
+    "type": "مكية",
+    "ayahCount": 54,
+    "file": "quran/034.json"
+  },
+  {
+    "number": 35,
+    "name": "فَاطِرٍ",
+    "type": "مكية",
+    "ayahCount": 45,
+    "file": "quran/035.json"
+  },
+  {
+    "number": 36,
+    "name": "يسٓ",
+    "type": "مكية",
+    "ayahCount": 83,
+    "file": "quran/036.json"
+  },
+  {
+    "number": 37,
+    "name": "الصَّافَّاتِ",
+    "type": "مكية",
+    "ayahCount": 182,
+    "file": "quran/037.json"
+  },
+  {
+    "number": 38,
+    "name": "صٓ",
+    "type": "مكية",
+    "ayahCount": 88,
+    "file": "quran/038.json"
+  },
+  {
+    "number": 39,
+    "name": "الزُّمَرِ",
+    "type": "مكية",
+    "ayahCount": 75,
+    "file": "quran/039.json"
+  },
+  {
+    "number": 40,
+    "name": "غَافِرٍ",
+    "type": "مكية",
+    "ayahCount": 85,
+    "file": "quran/040.json"
+  },
+  {
+    "number": 41,
+    "name": "فُصِّلَتۡ",
+    "type": "مكية",
+    "ayahCount": 54,
+    "file": "quran/041.json"
+  },
+  {
+    "number": 42,
+    "name": "الشُّورَىٰ",
+    "type": "مكية",
+    "ayahCount": 53,
+    "file": "quran/042.json"
+  },
+  {
+    "number": 43,
+    "name": "الزُّخۡرُفِ",
+    "type": "مكية",
+    "ayahCount": 89,
+    "file": "quran/043.json"
+  },
+  {
+    "number": 44,
+    "name": "الدُّخَانِ",
+    "type": "مكية",
+    "ayahCount": 59,
+    "file": "quran/044.json"
+  },
+  {
+    "number": 45,
+    "name": "الجَاثِيَةِ",
+    "type": "مكية",
+    "ayahCount": 37,
+    "file": "quran/045.json"
+  },
+  {
+    "number": 46,
+    "name": "الأَحۡقَافِ",
+    "type": "مكية",
+    "ayahCount": 35,
+    "file": "quran/046.json"
+  },
+  {
+    "number": 47,
+    "name": "مُحَمَّدٍ",
+    "type": "مدنية",
+    "ayahCount": 38,
+    "file": "quran/047.json"
+  },
+  {
+    "number": 48,
+    "name": "الفَتۡحِ",
+    "type": "مدنية",
+    "ayahCount": 29,
+    "file": "quran/048.json"
+  },
+  {
+    "number": 49,
+    "name": "الحُجُرَاتِ",
+    "type": "مدنية",
+    "ayahCount": 18,
+    "file": "quran/049.json"
+  },
+  {
+    "number": 50,
+    "name": "قٓ",
+    "type": "مكية",
+    "ayahCount": 45,
+    "file": "quran/050.json"
+  },
+  {
+    "number": 51,
+    "name": "الذَّارِيَاتِ",
+    "type": "مكية",
+    "ayahCount": 60,
+    "file": "quran/051.json"
+  },
+  {
+    "number": 52,
+    "name": "الطُّورِ",
+    "type": "مكية",
+    "ayahCount": 49,
+    "file": "quran/052.json"
+  },
+  {
+    "number": 53,
+    "name": "النَّجۡمِ",
+    "type": "مكية",
+    "ayahCount": 62,
+    "file": "quran/053.json"
+  },
+  {
+    "number": 54,
+    "name": "القَمَرِ",
+    "type": "مكية",
+    "ayahCount": 55,
+    "file": "quran/054.json"
+  },
+  {
+    "number": 55,
+    "name": "الرَّحۡمَٰن",
+    "type": "مدنية",
+    "ayahCount": 78,
+    "file": "quran/055.json"
+  },
+  {
+    "number": 56,
+    "name": "الوَاقِعَةِ",
+    "type": "مكية",
+    "ayahCount": 96,
+    "file": "quran/056.json"
+  },
+  {
+    "number": 57,
+    "name": "الحَدِيدِ",
+    "type": "مدنية",
+    "ayahCount": 29,
+    "file": "quran/057.json"
+  },
+  {
+    "number": 58,
+    "name": "المُجَادلَةِ",
+    "type": "مدنية",
+    "ayahCount": 22,
+    "file": "quran/058.json"
+  },
+  {
+    "number": 59,
+    "name": "الحَشۡرِ",
+    "type": "مدنية",
+    "ayahCount": 24,
+    "file": "quran/059.json"
+  },
+  {
+    "number": 60,
+    "name": "المُمۡتَحنَةِ",
+    "type": "مدنية",
+    "ayahCount": 13,
+    "file": "quran/060.json"
+  },
+  {
+    "number": 61,
+    "name": "الصَّفِّ",
+    "type": "مدنية",
+    "ayahCount": 14,
+    "file": "quran/061.json"
+  },
+  {
+    "number": 62,
+    "name": "الجُمُعَةِ",
+    "type": "مدنية",
+    "ayahCount": 11,
+    "file": "quran/062.json"
+  },
+  {
+    "number": 63,
+    "name": "المُنَافِقُونَ",
+    "type": "مدنية",
+    "ayahCount": 11,
+    "file": "quran/063.json"
+  },
+  {
+    "number": 64,
+    "name": "التَّغَابُنِ",
+    "type": "مدنية",
+    "ayahCount": 18,
+    "file": "quran/064.json"
+  },
+  {
+    "number": 65,
+    "name": "الطَّلَاقِ",
+    "type": "مدنية",
+    "ayahCount": 12,
+    "file": "quran/065.json"
+  },
+  {
+    "number": 66,
+    "name": "التَّحۡرِيمِ",
+    "type": "مدنية",
+    "ayahCount": 12,
+    "file": "quran/066.json"
+  },
+  {
+    "number": 67,
+    "name": "المُلۡكِ",
+    "type": "مكية",
+    "ayahCount": 30,
+    "file": "quran/067.json"
+  },
+  {
+    "number": 68,
+    "name": "القَلَمِ",
+    "type": "مكية",
+    "ayahCount": 52,
+    "file": "quran/068.json"
+  },
+  {
+    "number": 69,
+    "name": "الحَاقَّةِ",
+    "type": "مكية",
+    "ayahCount": 52,
+    "file": "quran/069.json"
+  },
+  {
+    "number": 70,
+    "name": "المَعَارِجِ",
+    "type": "مكية",
+    "ayahCount": 44,
+    "file": "quran/070.json"
+  },
+  {
+    "number": 71,
+    "name": "نُوحٍ",
+    "type": "مكية",
+    "ayahCount": 28,
+    "file": "quran/071.json"
+  },
+  {
+    "number": 72,
+    "name": "الجِنِّ",
+    "type": "مكية",
+    "ayahCount": 28,
+    "file": "quran/072.json"
+  },
+  {
+    "number": 73,
+    "name": "المُزَّمِّلِ",
+    "type": "مكية",
+    "ayahCount": 20,
+    "file": "quran/073.json"
+  },
+  {
+    "number": 74,
+    "name": "المُدَّثِّرِ",
+    "type": "مكية",
+    "ayahCount": 56,
+    "file": "quran/074.json"
+  },
+  {
+    "number": 75,
+    "name": "القِيَامَةِ",
+    "type": "مكية",
+    "ayahCount": 40,
+    "file": "quran/075.json"
+  },
+  {
+    "number": 76,
+    "name": "الإِنسَانِ",
+    "type": "مدنية",
+    "ayahCount": 31,
+    "file": "quran/076.json"
+  },
+  {
+    "number": 77,
+    "name": "المُرۡسَلَاتِ",
+    "type": "مكية",
+    "ayahCount": 50,
+    "file": "quran/077.json"
+  },
+  {
+    "number": 78,
+    "name": "النَّبَإِ",
+    "type": "مكية",
+    "ayahCount": 40,
+    "file": "quran/078.json"
+  },
+  {
+    "number": 79,
+    "name": "النَّازِعَاتِ",
+    "type": "مكية",
+    "ayahCount": 46,
+    "file": "quran/079.json"
+  },
+  {
+    "number": 80,
+    "name": "عَبَسَ",
+    "type": "مكية",
+    "ayahCount": 42,
+    "file": "quran/080.json"
+  },
+  {
+    "number": 81,
+    "name": "التَّكۡوِيرِ",
+    "type": "مكية",
+    "ayahCount": 29,
+    "file": "quran/081.json"
+  },
+  {
+    "number": 82,
+    "name": "الانفِطَارِ",
+    "type": "مكية",
+    "ayahCount": 19,
+    "file": "quran/082.json"
+  },
+  {
+    "number": 83,
+    "name": "المُطَفِّفِينَ",
+    "type": "مكية",
+    "ayahCount": 36,
+    "file": "quran/083.json"
+  },
+  {
+    "number": 84,
+    "name": "الانشِقَاقِ",
+    "type": "مكية",
+    "ayahCount": 25,
+    "file": "quran/084.json"
+  },
+  {
+    "number": 85,
+    "name": "البُرُوجِ",
+    "type": "مكية",
+    "ayahCount": 22,
+    "file": "quran/085.json"
+  },
+  {
+    "number": 86,
+    "name": "الطَّارِقِ",
+    "type": "مكية",
+    "ayahCount": 17,
+    "file": "quran/086.json"
+  },
+  {
+    "number": 87,
+    "name": "الأَعۡلَىٰ",
+    "type": "مكية",
+    "ayahCount": 19,
+    "file": "quran/087.json"
+  },
+  {
+    "number": 88,
+    "name": "الغَاشِيَةِ",
+    "type": "مكية",
+    "ayahCount": 26,
+    "file": "quran/088.json"
+  },
+  {
+    "number": 89,
+    "name": "الفَجۡرِ",
+    "type": "مكية",
+    "ayahCount": 30,
+    "file": "quran/089.json"
+  },
+  {
+    "number": 90,
+    "name": "البَلَدِ",
+    "type": "مكية",
+    "ayahCount": 20,
+    "file": "quran/090.json"
+  },
+  {
+    "number": 91,
+    "name": "الشَّمۡسِ",
+    "type": "مكية",
+    "ayahCount": 15,
+    "file": "quran/091.json"
+  },
+  {
+    "number": 92,
+    "name": "اللَّيۡلِ",
+    "type": "مكية",
+    "ayahCount": 21,
+    "file": "quran/092.json"
+  },
+  {
+    "number": 93,
+    "name": "الضُّحَىٰ",
+    "type": "مكية",
+    "ayahCount": 11,
+    "file": "quran/093.json"
+  },
+  {
+    "number": 94,
+    "name": "الشَّرۡحِ",
+    "type": "مكية",
+    "ayahCount": 8,
+    "file": "quran/094.json"
+  },
+  {
+    "number": 95,
+    "name": "التِّينِ",
+    "type": "مكية",
+    "ayahCount": 8,
+    "file": "quran/095.json"
+  },
+  {
+    "number": 96,
+    "name": "العَلَقِ",
+    "type": "مكية",
+    "ayahCount": 19,
+    "file": "quran/096.json"
+  },
+  {
+    "number": 97,
+    "name": "القَدۡرِ",
+    "type": "مكية",
+    "ayahCount": 5,
+    "file": "quran/097.json"
+  },
+  {
+    "number": 98,
+    "name": "البَيِّنَةِ",
+    "type": "مدنية",
+    "ayahCount": 8,
+    "file": "quran/098.json"
+  },
+  {
+    "number": 99,
+    "name": "الزَّلۡزَلَةِ",
+    "type": "مدنية",
+    "ayahCount": 8,
+    "file": "quran/099.json"
+  },
+  {
+    "number": 100,
+    "name": "العَادِيَاتِ",
+    "type": "مكية",
+    "ayahCount": 11,
+    "file": "quran/100.json"
+  },
+  {
+    "number": 101,
+    "name": "القَارِعَةِ",
+    "type": "مكية",
+    "ayahCount": 11,
+    "file": "quran/101.json"
+  },
+  {
+    "number": 102,
+    "name": "التَّكَاثُرِ",
+    "type": "مكية",
+    "ayahCount": 8,
+    "file": "quran/102.json"
+  },
+  {
+    "number": 103,
+    "name": "العَصۡرِ",
+    "type": "مكية",
+    "ayahCount": 3,
+    "file": "quran/103.json"
+  },
+  {
+    "number": 104,
+    "name": "الهُمَزَةِ",
+    "type": "مكية",
+    "ayahCount": 9,
+    "file": "quran/104.json"
+  },
+  {
+    "number": 105,
+    "name": "الفِيلِ",
+    "type": "مكية",
+    "ayahCount": 5,
+    "file": "quran/105.json"
+  },
+  {
+    "number": 106,
+    "name": "قُرَيۡشٍ",
+    "type": "مكية",
+    "ayahCount": 4,
+    "file": "quran/106.json"
+  },
+  {
+    "number": 107,
+    "name": "المَاعُونِ",
+    "type": "مكية",
+    "ayahCount": 7,
+    "file": "quran/107.json"
+  },
+  {
+    "number": 108,
+    "name": "الكَوۡثَرِ",
+    "type": "مكية",
+    "ayahCount": 3,
+    "file": "quran/108.json"
+  },
+  {
+    "number": 109,
+    "name": "الكَافِرُونَ",
+    "type": "مكية",
+    "ayahCount": 6,
+    "file": "quran/109.json"
+  },
+  {
+    "number": 110,
+    "name": "النَّصۡرِ",
+    "type": "مدنية",
+    "ayahCount": 3,
+    "file": "quran/110.json"
+  },
+  {
+    "number": 111,
+    "name": "المَسَدِ",
+    "type": "مكية",
+    "ayahCount": 5,
+    "file": "quran/111.json"
+  },
+  {
+    "number": 112,
+    "name": "الإِخۡلَاصِ",
+    "type": "مكية",
+    "ayahCount": 4,
+    "file": "quran/112.json"
+  },
+  {
+    "number": 113,
+    "name": "الفَلَقِ",
+    "type": "مكية",
+    "ayahCount": 5,
+    "file": "quran/113.json"
+  },
+  {
+    "number": 114,
+    "name": "النَّاسِ",
+    "type": "مكية",
+    "ayahCount": 6,
+    "file": "quran/114.json"
+  }
+]

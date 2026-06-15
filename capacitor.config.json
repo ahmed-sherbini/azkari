@@ -1,0 +1,15 @@
+{
+  "appId": "com.azkari.app",
+  "appName": "أذكاري",
+  "webDir": "www",
+  "backgroundColor": "#0f766eff",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "always"
+  }
+}
