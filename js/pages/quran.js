@@ -141,7 +141,9 @@
       text.ayahs.forEach(function (a) {
         var span = el("span", { class: "ayah" }, [
           document.createTextNode(a.text + " "),
-          el("span", { class: "ayah-mark", text: UI.toArabicNum(a.n) })
+          // U+06DD (end-of-ayah) followed by the number → Amiri renders the
+          // number enclosed in the rosette ornament.
+          el("span", { class: "ayah-mark", text: "۝" + UI.toArabicNum(a.n) })
         ]);
         frag.appendChild(span);
         frag.appendChild(document.createTextNode(" "));

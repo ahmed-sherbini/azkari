@@ -461,15 +461,16 @@ img { max-width: 100%; display: block; }
   text-align: justify; text-align-last: center;
 }
 .ayah { display: inline; }
+/* End-of-ayah ornament (U+06DD): the Amiri Quran font renders the ayah number
+   inside the rosette, so it scales with the text and fits any digit count. */
 .ayah-mark {
-  display: inline-grid; place-items: center;
-  width: 1.7em; height: 1.7em; margin: 0 .25em;
-  font-family: var(--font); font-size: .55em; font-weight: 700;
-  color: var(--c-primary); vertical-align: middle;
-  background:
-    radial-gradient(circle, transparent 54%, var(--c-accent) 55%, transparent 58%);
+  font-family: var(--font-quran);
+  font-size: 1.25em;
+  color: var(--c-primary);
+  margin: 0 .1em;
+  unicode-bidi: isolate;
+  line-height: 1;
 }
-.ayah-mark::before { content: "۝"; position: absolute; opacity: 0; }
 .reader-missing {
   text-align: center; padding: 30px 20px; color: var(--text-muted);
 }
